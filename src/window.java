@@ -78,7 +78,7 @@ public class window extends JFrame {
     {
         setTitle("Food Management System (FMS)");
         Class.forName("org.postgresql.Driver");
-        Connection con = DriverManager.getConnection("jdbc:postgresql://35.203.96.50:5432/postgres", "postgres","password");
+        Connection con = DriverManager.getConnection(database_info.getDBPAth(), database_info.getUsername(),database_info.getPassword());
         con.setAutoCommit(false);
         Statement stmt = con.createStatement();
         DefaultTableModel model = new DefaultTableModel(new String[]{"Name", "Best Before Date", "Quantity", "Location", "ID"}, 0)
